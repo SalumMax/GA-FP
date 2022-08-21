@@ -4,26 +4,25 @@ body {
   justify-content: center;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background-color: black;
+  background-image: linear-gradient(135deg, #380036, #0cbaba);
+  background-repeat: no-repeat;
+  background-size: 300vh;
   color: white;
   border: none;
 }
 .container {
   margin-top: 30px;
-  background-color: rgb(21, 20, 20);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  /* max-width: 1280px; */
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px rgb(131, 25, 192);
 }
 
 .repositories {
-  background-color: black;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -32,21 +31,25 @@ body {
   width: 100%;
   max-width: 1280px;
   border-radius: 10px;
-  /* box-shadow: 0px 2px 4px rgb(131, 25, 192); */
   margin-top: 20px;
 }
 img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
+}
+img:hover {
+  transform: scale(1.05);
   box-shadow: 0px 2px 4px rgb(131, 25, 192);
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 2px 4px rgb(189, 118, 234);
 }
 .user-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   font-size: 1rem;
-  padding: 2em;
+  padding: 2rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -54,20 +57,25 @@ a {
   color: white;
   text-decoration: none;
 }
+a:hover {
+  color: white;
+  text-decoration: none;
+  color: rgb(210, 160, 244);
+}
 ul {
   list-style: none;
   padding: 0;
 }
 .repos {
   display: flex;
+  min-height: 100vh;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: black;
   margin-top: 0;
-  padding: 2em;
+  padding: 2rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  margin-bottom: 4em;
+  margin-bottom: 4rem;
 }
 h3 {
   margin: 4px;
@@ -75,15 +83,14 @@ h3 {
   text-align: center;
   color: whitesmoke;
 }
-/* h2 {
-  text-shadow: 0px 2px 4px rgb(131, 25, 192);
-} */
 .repoList {
   width: 100%;
+  margin: 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+
   /* border-radius: 10px;
   box-shadow: 0px 2px 4px rgb(131, 25, 192); */
 }
@@ -92,35 +99,54 @@ h3 {
   width: 75%;
   min-height: 100px;
   border-radius: 10px;
-  margin: 1em 0;
-  padding: 1em;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0;
   text-align: center;
-  background-color: rgb(21, 20, 20);
+  background-image: linear-gradient(135deg, #612d67, #0d324d);
   border-radius: 10px;
-  box-shadow: 0px 2px 4px rgb(131, 25, 192);
+  box-shadow: 0px 2px 4px rgb(189, 118, 234);
+  animation: mymove 2s;
 }
-
+@keyframes mymove {
+  0% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes mymove {
+  0% {
+    transform: translateX(-100%);
+  }
+}
 .repoList li:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(32, 22, 52, 0.194),
-    rgba(255, 255, 255, 0)
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-}
-button {
-  background-color: rgb(14, 13, 13);
-  color: whitesmoke;
-  padding: 20px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px rgb(131, 25, 192);
-  text-transform: uppercase;
-  margin: 20px auto 50px 250px;
+  background: linear-gradient(135deg, #125b5b, #36096d);
+  transform: scale(1.05);
 }
 
+button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  background: transparent;
+  color: whitesmoke;
+  padding: 15px;
+  border: none;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgb(189, 118, 234);
+  text-transform: uppercase;
+  outline: none;
+}
+button:focus:hover {
+  outline: none;
+  transform: scale(1.1);
+  transition: 0.1s ease-in-out;
+}
+
+.myChart{
+  scale: 0.2;
+}
 .hide {
   /* '!important' is to make sure that when we add the class using JS, it takes precendence */
   display: none !important;
